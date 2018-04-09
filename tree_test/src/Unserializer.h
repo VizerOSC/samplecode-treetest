@@ -4,13 +4,13 @@
 #include "Parser.h"
 
 namespace myapp {
-	using std::istream;
+    using std::istream;
 
-	class Unserializer {
-	protected:
-		Parser parser;
+    class Unserializer {
+    protected:
+        Parser parser;
 
-	public:
-		ITreeNode* unserialize(istream& src);
-	};
+    public:
+        ITreeNode* unserialize(istream& src);
+    };
 }

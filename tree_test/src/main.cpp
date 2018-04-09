@@ -4,41 +4,41 @@
 #include "TreeApplication.h"
 
 namespace myapp {
-	using std::string;
-	using std::strcmp;
+    using std::string;
+    using std::strcmp;
 
 
 
-	Operation getOperation(int argc, char ** argv) {
+    Operation getOperation(int argc, char ** argv) {
 
-		Operation op = {};
-		if (argc != 2 && argc != 4) return op;
+        Operation op = {};
+        if (argc != 2 && argc != 4) return op;
 
-		int i = 0;
+        int i = 0;
 
-		do {
+        do {
 
-			if (strcmp(*argv, "-i") == 0) {
-				op.type |= OP_READ;
-				op.inputFile = *(argv + 1);
-			}
-			else if (strcmp(*argv, "-o") == 0) {
-				op.type |= OP_WRITE;
-				op.outputFile = *(argv + 1);
-			}
+            if (strcmp(*argv, "-i") == 0) {
+                op.type |= OP_READ;
+                op.inputFile = *(argv + 1);
+            }
+            else if (strcmp(*argv, "-o") == 0) {
+                op.type |= OP_WRITE;
+                op.outputFile = *(argv + 1);
+            }
 
-			argv += 2;
-		} while (*argv != nullptr);
+            argv += 2;
+        } while (*argv != nullptr);
 
-		return op;
-	}
+        return op;
+    }
 }
 
 int main(int argc, char ** argv) {
-	myapp::TreeApplication app;
+    myapp::TreeApplication app;
 
-	app.operate(myapp::getOperation(argc - 1, ++argv));
+    app.operate(myapp::getOperation(argc - 1, ++argv));
 
-	return 0;
+    return 0;
 }
 

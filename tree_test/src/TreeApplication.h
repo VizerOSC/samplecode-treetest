@@ -8,22 +8,22 @@
 #include "Serializer.h"
 
 namespace myapp {
-	using std::string;
-	using std::ostream;
+    using std::string;
+    using std::ostream;
 
-	class TreeApplication {
-	protected:
-		/* vars */
-		Unserializer unserializer;
-		Serializer serializer;
-		FormattedPrinter printer;
+    class TreeApplication {
+    protected:
+        /* vars */
+        Unserializer unserializer;
+        Serializer serializer;
+        FormattedPrinter printer;
 
-	public:
-		void operate(Operation);
+    public:
+        void operate(Operation);
 
-	protected:
-		ITreeNode* read(string& filename);
-		void write(string& filename, ITreeNode * rootNode);
-		void print(ostream& os, ITreeNode * rootNode);
-	};
+    protected:
+        ITreeNode* read(string& filename);
+        void write(string& filename, ITreeNode * rootNode);
+        void print(ostream& os, ITreeNode * rootNode);
+    };
 }
